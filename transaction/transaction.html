@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Transaction</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    
+#transaction {
+    
+    background-color:white;
+    padding: 5% 0;
+    text-align: center;
+    margin :5%;
+}
+
+#transaction h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+#transaction .card-container {
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+#transaction .card {
+    background-color: rgba(245, 246, 179, 0.758);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 20%;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#transaction.card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#transaction .card p {
+    font-size: 16px;
+}
+
+#transaction button {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#transaction button:hover {
+    background-color:grey;
+}
+</style>
+<body>
+   <section id="transaction">
+        <h1>Our Transactions</h1>
+        <div class="card-container">
+            <div class="card">
+                <h2>Debit</h2>
+                
+                <button onclick="click()" class="click"><a href="credit debit.html">click</a></button><br></br>
+            </div>
+            <div class="card">
+                <h2>Credit</h2>
+               
+                <button onclick="click()" class="click"><a href="credit debit.html">click</a></button><br></br>
+            </div>
+            <div class="card">
+                <h2>Details</h2>
+               
+                <button onclick="click()" class="click"><a href="details.html">click</a></button><br></br>
+            </div>
+        </div>
+    </section>
+    </body>
+    </html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content, initial-scale=1.0">
+    <title>Account Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color:white;
+        }
+
+        .header {
+            width: 100%;
+            background-color: #4c9daf;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .header .btn-header {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .header .btn-header:hover {
+            color: #d4d4d4;
+        }
+
+        .container {
+            background-color:white;
+            padding: 30px; /* Increased padding */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 600px; /* Increased width */
+            height: 300px;
+            margin-top: 60px; /* Adjusted to avoid overlap with header */
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+            margin: 5px;
+        }
+
+        .btn-info {
+            background-color: #4CAF50;
+        }
+
+        .btn-info:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        .btn-info:active {
+            background-color: #388e3c;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #balance {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: calc(100% - 20px); /* Adjust width to fit within container */
+            padding: 10px;
+            box-sizing: border-box; /* Adjusted from 300px to border-box */
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%; /* Adjusted width */
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <button class="btn-header" onclick="window.location.href='../index.html'">
+            <i class="fas fa-arrow-left"></i> Back
+        </button>
+        <div>
+            <button class="btn-header" onclick="window.location.href='settings.html'">
+                <i class="fas fa-cog"></i> Settings
+            </button>
+            <button class="btn-header" onclick="window.location.href='../index.html'">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="balance">Account Balance: ₹1,00,00,000</div>
+        
+        <div class="form-group">
+            <input type="text" id="account-number" placeholder="Enter Account Number" />
+        </div>
+        
+        <div class="form-group">
+            <input type="password" id="pin-number" placeholder="Enter PIN" />
+        </div>
+        
+        <div class="form-group">
+            <input type="number" id="amount" placeholder="Enter amount" />
+        </div>
+        
+        <button class="btn btn-info" onclick="credit()">Credit</button>
+        <button class="btn btn-info" onclick="debit()">Debit</button>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modal-message"></p>
+        </div>
+    </div>
+
+    <script>
+        let balance = 10000000; // Initial balance of 1 crore
+        
+        function updateBalance() {
+            document.getElementById('balance').innerText = `Account Balance: ₹${balance.toLocaleString()}`;
+        }
+
+        function credit() {
+            const accountNumber = document.getElementById('account-number').value;
+            const pinNumber = document.getElementById('pin-number').value;
+            const amount = parseFloat(document.getElementById('amount').value);
+
+            if (!isNaN(amount) && amount > 0 && accountNumber && pinNumber) {
+                balance += amount;
+                updateBalance();
+                showModal('Amount credited successfully!');
+                document.getElementById('amount').value = '';
+            } else {
+                showModal('Please enter valid details and amount');
+            }
+        }
+
+        function debit() {
+            const accountNumber = document.getElementById('account-number').value;
+            const pinNumber = document.getElementById('pin-number').value;
+            const amount = parseFloat(document.getElementById('amount').value);
+
+            if (!isNaN(amount) && amount > 0 && amount <= balance && accountNumber && pinNumber) {
+                balance -= amount;
+                updateBalance();
+                showModal('Amount debited successfully!');
+                document.getElementById('amount').value = '';
+            } else {
+                showModal('Please enter valid details or ensure sufficient balance');
+            }
+        }
+
+        function showModal(message) {
+            document.getElementById('modal-message').innerText = message;
+            document.getElementById('myModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+
+        // Initialize balance display
+        updateBalance();
+    </script>
+</body>
+</html>

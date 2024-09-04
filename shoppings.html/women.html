@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Wear - Online Shopping</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .card-img-top {
+            height: 500px;
+            object-fit: cover;
+        }
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+        .navbar-nav .nav-item {
+            margin-right: 15px;
+        }
+        .navbar-nav .nav-item:last-child {
+            margin-right: 0;
+        }
+        .navbar-nav .nav-link {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-nav .nav-link i {
+            margin-right: 8px;
+        }
+        .container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <a class="navbar-brand" href="#">Women's Wear</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="shopping.html"><i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-tags"></i> Categories
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                        <a class="dropdown-item" href="#">Dresses</a>
+                        <a class="dropdown-item" href="#">Tops</a>
+                        <a class="dropdown-item" href="#">Skirts</a>
+                        <a class="dropdown-item" href="#">Accessories</a>
+                        <a class="dropdown-item" href="#">Footwear</a>
+                        <a class="dropdown-item" href="#">Blouses</a>
+                        <a class="dropdown-item" href="#">Jackets</a>
+                        <a class="dropdown-item" href="#">Suits</a>
+                        <a class="dropdown-item" href="#">Sarees</a>
+                        <a class="dropdown-item" href="#">Kurtis</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="filterDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-filter"></i> Filters
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="filterDropdown">
+                        <form class="px-3 py-2">
+                            <div class="form-group">
+                                <label for="minValue">Min Value</label>
+                                <input type="number" class="form-control" id="minValue" placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="maxValue">Max Value</label>
+                                <input type="number" class="form-control" id="maxValue" placeholder="1000">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Apply</button>
+                        </form>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user"></i> Account
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="accountDropdown">
+                        <a class="dropdown-item" href="#"><i class="fas fa-heart"></i> Wishlist</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a>
+                    </div>
+                </li>
+                <form class="form-inline my-2 my-lg-0 ml-3">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <!-- Main Content Area -->
+        <section class="container my-5">
+            <h2 class="text-center mb-4">Featured Women's Wear</h2>
+            <div class="row">
+                <!-- Product Card -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="./shopping.images/elagent dress.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Elegant Dress</h5>
+                            <p class="card-text">$150.00</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="./shopping.images/tees.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Stylish Tees</h5>
+                            <p class="card-text">$55.00</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="./shopping.images/skirts.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Trendy Skirt</h5>
+                            <p class="card-text">$70.00</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="./shopping.images/women acc.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Accessories</h5>
+                            <p class="card-text">$40.00</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="./shopping.images/footwear.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title"> Footwear</h5>
+                            <p class="card-text">$90.00</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="./shopping.images/women jean.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">jeans</h5>
+                            <p class="card-text">$60.00</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="./shopping.images/women jacket.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Jackets</h5>
+                            <p class="card-text">$120.00</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="./shopping.images/women watch.jpg" class="card-img-top" >
+                        <div class="card-body">
+                            <h5 class="card-title">watches</h5>
+                            <p class="card-text">$200.00</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="./shopping.images/saree.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Traditional Saree</h5>
+                            <p class="card-text">$180.00</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="./shopping.images/kurtas.jpg" class="card-img-top" >
+                        <div class="card-body">
+                            <h5 class="card-title">Stylish Kurtis</h5>
+                            <p class="card-text">$85.00</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="./shopping.images/dress.jpg" class="card-img-top" >
+                        <div class="card-body">
+                            <h5 class="card-title">Trendy Dress</h5>
+                            <p class="card-text">$130.00</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="./shopping.images/party .jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">party wear</h5>
+                            <p class="card-text">$75.00</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Women's Wear Shop. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
